@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff8f4">
+    <title>Create a listing — Housemate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="housemate.css">
+</head>
+<body data-page="create">
+            <div class="site-shell">
+            <header class="topbar">
+                <a class="brand" href="housemate.html" aria-label="Housemate home"><span class="brand-mark" aria-hidden="true"><span>H</span><span>M</span></span><span class="brand-name">house<span>mate</span></span></a>
+                <button class="mobile-menu-button" id="menu-button" aria-label="Open navigation" aria-expanded="false">☰</button>
+                <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+                    <a href="housemate.html" data-nav="home">Home</a>
+                    <a href="rooms.html" data-nav="rooms">Find a room</a>
+                    <a href="roommates.html" data-nav="roommates">Find a housemate</a>
+                    <a href="create-listing.html" data-nav="create">Create a listing</a>
+                    <a href="negotiation.html" data-nav="chat">Messages</a>
+                </nav>
+                <div class="topbar-actions">
+                    <a class="saved-link" href="saved.html" aria-label="Saved listings">
+                        <span aria-hidden="true">♡</span><span class="saved-label">Saved</span><span class="saved-count" data-saved-count>0</span>
+                    </a>
+                        <a class="button button-small button-primary" href="create-listing.html">Get started <span aria-hidden="true">↗</span></a>
+                </div>
+            </header>
+        <main>
+        <div class="page-wrap page-heading">
+                <span class="eyebrow">Make the first move</span>
+                <h1>Tell us what you're looking for</h1>
+            <p>Share a few details so the right people can find you. You can update your listing any time.</p>
+        </div>
+        <section class="page-wrap form-layout">
+            <form class="form-card" id="listing-form" novalidate>
+                <div class="success-panel" id="form-success" role="status">
+                </div>
+                <h2>First, what brings you here?</h2>
+                <p class="form-intro">Choose the option that best describes what you need.</p>
+        <div class="choice-grid">
+            <div class="choice-option">
+                <input type="radio" name="kind" id="kind-room" value="room" checked>
+                <label for="kind-room">
+                    <strong>🏠 I have a room</strong>
+                    <small>Share your space with someone looking for a home.</small>
+                </label>
+            </div>
+            <div class="choice-option">
+                <input type="radio" name="kind" id="kind-roommate" value="roommate">
+                <label for="kind-roommate">
+                    <strong>⌕ I need a room</strong>
+                    <small>Introduce yourself and find the right place to land.</small>
+                </label>
+            </div>
+        </div>
+        <h2 id="form-details-title">About your room</h2>
+        <div class="form-grid">
+        <div class="field span-2">
+            <label for="listing-title">Listing title *</label>
+            <input id="listing-title" name="title" required maxlength="70" placeholder="e.g. Bright room in a calm home">
+            <span class="field-error" data-error="title"></span>
+        </div>
+        <div class="field">
+            <label for="listing-name">Your name *</label>
+            <input id="listing-name" name="name" required maxlength="45" placeholder="How should we introduce you?">
+            
+            <span class="field-error" data-error="name"></span>
+        </div>
+        <div class="field">
+            <label for="listing-age">Your age</label>
+            <input id="listing-age" name="age" type="number" min="18" max="100" placeholder="e.g. 28">
+
+        </div>
+        <div class="field">
+            <label for="listing-location">Neighbourhood in Abuja *</label>
+            <input id="listing-location" name="location" list="abuja-areas" required placeholder="e.g. Wuse 2">
+            
+            <datalist id="abuja-areas">
+                <option>Wuse 2</option>
+                <option>Maitama</option>
+                <option>Gwarinpa</option>
+                <option>Jabi</option>
+                <option>Utako</option>
+                <option>Garki</option>
+                <option>Asokoro</option>
+                <option>Life Camp</option>
+                <option>Kubwa</option>
+                <option>Central Area</option>
+                <option>Lokogoma</option>
+                <option>Apo</option>
+                <option>Katampe</option>
+                <option>Durumi</option>
+                <option>Jahi</option>
+            </datalist><span class="field-error" data-error="location"></span>
+        </div>
+        <div class="field">
+            <label for="listing-budget">Your budget / asking rent per year (₦) *</label>
+            <input id="listing-budget" name="price" type="number" min="0" step="1000" required placeholder="e.g. 450000">
+            <span class="field-error" data-error="price"></span>
+        </div>
+        <div class="field room-only">
+            <label for="room-type">Room / property type *</label>
+            <select id="room-type" name="roomType" required>
+                <option value="">Choose a type</option>
+                <option>Self-contained</option>
+                <option>1-bedroom flat</option>
+                <option>2-bedroom flat</option>
+                <option>3-bedroom flat</option>
+                <option>Duplex</option>
+                <option>Other</option>
+            </select>
+            <span class="field-error" data-error="roomType"></span>
+        </div>
+        <div class="field room-only">
+            <label for="roommates-needed">Housemates wanted</label>
+            <select id="roommates-needed" name="roomsNeeded">
+                <option value="1">1 person</option>
+                <option value="2">2 people</option>
+                <option value="3">3 people</option>
+                <option value="4">4 or more</option>
+            </select>
+        </div>
+        <div class="field roommate-only" hidden>
+            <label for="move-date">When do you want to move?</label>
+            <input id="move-date" name="moveDate" type="date">
+
+        </div>
+        <div class="field">
+            <label id="listing-photo-label" for="listing-photo">Photo of your room *</label>
+            <input id="listing-photo" name="image" type="url" required placeholder="https://…">
+            <span class="form-note">Room listings should include a clear photo of the space. Roommate listings should use a profile photo.</span>
+            <span class="field-error" data-error="image"></span>
+        </div>
+        <div class="field">
+            <label for="listing-avatar">Your profile photo (optional)</label>
+            <input id="listing-avatar" name="avatar" type="url" placeholder="https://…">
+            <span class="form-note">A profile photo helps people recognise you.</span>
+        </div>
+        <div class="field span-2">
+            <label for="listing-description">A little about your space / you *</label>
+            <textarea id="listing-description" name="description" required maxlength="600" placeholder="What should a potential housemate know?"></textarea>
+            <span class="field-error" data-error="description"></span>
+            </div>
+            <div class="field span-2">
+                <label for="listing-preferences">Your preferred housemates / neighbourhood *</label>
+            
+                <textarea id="listing-preferences" name="preferences" required maxlength="300" placeholder="Describe the people or place you have in mind."></textarea>
+            </div>
+        </div>
+                <hr class="section-divider">
+                <p class="form-note">Your contact details stay private. A person interested in your listing can request to contact you, and you'll choose whether to share them.</p>
+            <button class="button button-primary button-full" type="submit">Publish my listing 
+                <span aria-hidden="true">→</span>
+            </button>
+        </form>
+        <aside>
+            <div class="aside-card">
+                <h3>A good listing gets better matches</h3>
+            
+            <p>Be clear about your budget, area, move-in plans and what makes a home comfortable for you.</p>
+        </div>
+        <div class="aside-card">
+            <h3>What happens next?</h3>
+            <div class="step-list">
+                <div class="step-row">
+                    <span class="step-number">1</span>
+                    <span>
+                        <strong>Your listing goes live</strong>
+                        <small>People can discover your details and preferences.</small>
+                    </span>
+                </div>
+                <div class="step-row">
+                    <span class="step-number">2</span>
+                    <span>
+                        <strong>Review contact requests</strong>
+                        <small>Choose who can get in touch with you.</small>
+                    </span>
+                </div>
+                <div class="step-row">
+                    <span class="step-number">3</span>
+                    <span>
+                        <strong>Talk it through</strong>
+                        <small>Discuss rent and the details before you decide.</small>
+                    </span>
+                </div>
+            </div>
+        </div>
+            <div class="aside-card">
+                <h3>Abuja neighbourhoods</h3>
+                <p>Wuse · Maitama · Gwarinpa · Jabi · Utako · Garki · Asokoro · Life Camp · Kubwa</p>
+                <p class="form-note">Neighbourhood suggestions are currently provided for Abuja. Map-based search can be connected when a map service is selected.</p>
+            </div>
+        </aside>
+    </section>
+    </main>
+    <footer class="footer">
+
+            <a class="brand footer-brand" href="housemate.html">
+            
+            <span class="brand-mark" aria-hidden="true">
+            
+                <span>H</span>
+            
+            
+                <span>M</span>
+            </span>
+            <span class="brand-name">house<span>mate</span></span>
+            </a>
+            <p>Better rooms. Better housemates. A better way to feel at home.</p>
+            <a class="footer-settings" href="settings.html">Settings ⚙</a>
+        <span class="footer-copy">© 2025 Housemate</span>
+    </footer>
+        </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="housemate.js"></script>
+</body>
+</html>
